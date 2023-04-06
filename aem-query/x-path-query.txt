@@ -1,7 +1,14 @@
 #AEM - X-Path Queries
 
-- {Check for a specific Template and property for the given path and Type}
-type=cq:Page
+- {Single property value search}
+type=cq:nodeType
+path=/content-path
+property=property-name
+property.value=property-value
+p.limit=-1
+
+- {group or multiple property value search}
+type=cq:nodeType
 path=/content-path
 group.1_property=jcr:content/cq:template
 group.1_property.value=template-path
@@ -10,18 +17,15 @@ group.2_property.operation=exists/not
 group.p.and=true
 p.limit=-1
 
-
-- ${Check for a property under any path  for a given type}
-type=dam:Asset
+- {Single property exists search}
+type=cq:nodeType
 path=/content-path
 1_property=jcr:content/path-to-property
 1_property.operation=exists/not
 p.limit=-1
 
-
-
-- ${Get the list of pages with the full-text search}
-type=cq:Page
+- ${full-text search}
+type=cq:Page/cq:nodeType
 path=/content-path
 group.1_group.fulltext=Search-text-1
 group.2_group.fulltext=Search-text-2
@@ -29,11 +33,8 @@ group.p.or=true
 orderby.sort=desc
 p.limit=-1
 
-
-- ${Get the list of nodes with the full-text search}
+- ${full-text search}
 type=nt:unstructured
 path=/content-path
 1_group.fulltext=.pdf
 p.limit=-1
-
-
