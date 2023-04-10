@@ -1,0 +1,13 @@
+#Linkchecker
+
+OSGI Configurations
+	- Day CQ Link Checker Transformer (com.day.cq.rewriter.linkchecker.impl.LinkCheckerTransformerFactory)
+	- Day CQ WCM Link Checker Configuration Factory (com.day.cq.wcm.core.impl.LinkCheckerConfigurationFactoryImpl)
+	- http://localhost:4502/etc/linkchecker.html
+	- http://localhost:4502/crx/de/index.jsp#/var/linkchecker path will store all the link checker entries based on the host name.
+
+
+Solution / Fix:
+	- Identify why the Link checker marking the URL as invalid.
+	- Check if there is any issues with the site certificate. 
+	- Once issue is fixed, delete the correct node in the /var/linkchecker path which will run the linkchecker for that path. 
