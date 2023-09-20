@@ -13,6 +13,7 @@ jobs:
         steps:
             - name: Step 1
               run: echo "Testing my Git Action Workflow."
+            - uses: actions/checkout@v2
             - name: Listing Repo
               run: |
                   pwd
