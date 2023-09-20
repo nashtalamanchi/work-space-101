@@ -22,6 +22,8 @@ jobs:
               run: |
                   pwd
                   ls
+                  git status
+                  git branch
                   git log --format="Github Sync: %an : %s" -n 1             
 
 
