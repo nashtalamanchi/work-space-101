@@ -13,5 +13,14 @@ jobs:
         steps:
             - name: Step 1
               run: echo "Testing my Git Action Workflow."
+            - name: Listing Repo
+              run: |
+                  pwd
+                  ls
+            - name: Clean project
+              run: |
+                  pwd
+                  ls
+                  git log --format="Github Sync: %an : %s" -n 1 > commit.txt              
 
 
